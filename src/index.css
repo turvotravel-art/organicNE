@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-sage: #87A96B;
+  --color-brand-offwhite: #FAF9F6;
+  --color-brand-gold: #D4AF37;
+  --color-brand-dark: #2C3528;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-offwhite text-brand-dark font-sans antialiased selection:bg-brand-sage selection:text-white dark:bg-brand-dark dark:text-brand-offwhite;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
